@@ -5,13 +5,13 @@
 body{
     background-color: #8BA1BB;
     font-family: arial;
-    min-width: 640px;
+    margin: 0;
 }
-div#contenu{
+div.contenu{
     background-color: white;
     border-radius: 10px;
-    margin: 50px 10% 80px 10%;
-    padding: 0px 30px 30px 30px;
+    margin: 20px 3% 20px 3%;
+    padding: 0px 15px 20px 15px;
     box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
     overflow: visible;
 }
@@ -25,9 +25,10 @@ p[id="categorie"]{
     color: white;
     display: inline-block;
     margin-top: -15px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     padding: 10px 20px;
     font-weight: bold;
+    font-size: 16px;
 }
 h1{
     text-align: center;
@@ -35,6 +36,7 @@ h1{
     margin-bottom: 12px;
 }
 p.description{
+    text-align: center;
     max-width: 400px;
     display: inline-block;
     font-size: 16px;
@@ -60,32 +62,32 @@ div.info{
 img.info{
     max-height: 400px;
     display: block;
-    object-fit: cover;
+    object-fit: cover; /*L'image est zoomée mais n'est pas déformée*/
     min-height: 200px;
     background-color:lightgrey;
 }
 table.info{
     position: absolute;
-    bottom:0px;
+    bottom:0;
     width: 100%;
     color:white;
     background-color: #6C829DC0; /*opacity: 69%;*/
-    height: 80px;
+    height: 50px;
 }
 table.info td{
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     vertical-align: top;
 }
 table.info th{
-    font-size: 16px;
+    font-size: 14px;
     vertical-align: bottom;
     padding-bottom: 8px;
 }
 
 div.colonne{
-    width: 45%;
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 23px;
 }
 div.colonne h2{
     text-align: center;
@@ -96,10 +98,6 @@ div.colonne h2{
 }
 div.colonne1{
     display: inline-block;
-    margin-right: 10%;
-}
-div.colonne2{
-    float: right;
 }
 
 div.ingredients p{
@@ -115,7 +113,7 @@ table.preparation p.numero{
     color: white;
     width: 24px;
     height: 24px;
-    padding-top: 5px;
+    padding-top: 4px;
     font-size: 13px;
     text-align: center;
     font-weight: bold;
@@ -128,8 +126,45 @@ table.preparation td{
 }
 table.preparation td.etape{
     padding-left: 10px;
-    font-size: 14.8px;
+    font-size: 14.5px;
+    padding-bottom: 10px;
 }
 table.preparation tr{
-    height: 46px; /*Les tables ne prennent pas en compte les min- et max- , on doit préciser directement la propriété*/
+    height: 45px; /*Les tables ne prennent pas en compte les min- et max- , on doit préciser directement la propriété*/
+}
+
+/*Nos styles pour ordinateur*/
+@media only screen and (min-width: 768px){
+    div.contenu{
+        min-width: 400px;
+        margin: 50px 10% 80px 10%;
+        padding: 0px 30px 30px 30px;
+    }
+
+    table.info{
+        height: 80px;
+    }
+    table.info td{
+        font-size: 14px;
+    }
+    table.info th{
+        font-size: 16px;
+    }
+
+    div.colonne{
+        width: 45%;
+    }
+    div.colonne1{
+        margin-right: 10%;
+    }
+    div.colonne2{
+        float: right;
+    }
+}
+@media only screen and (min-width: 900px){
+    div.contenu{
+        margin-left: auto;
+        margin-right: auto;
+        width: 656px;
+    }
 }
